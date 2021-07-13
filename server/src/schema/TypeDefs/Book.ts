@@ -6,6 +6,6 @@ export const BookType = new GraphQLObjectType({
   fields: () => ({
     id: { type: GraphQLID },
     title: { type: GraphQLString },
-    authId: { type: GraphQLID },
+    // authId: { type: GraphQLID },
   }),
 });

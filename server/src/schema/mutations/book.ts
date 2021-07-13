@@ -1,5 +1,6 @@
 import { GraphQLList } from "graphql";
 import { BookType } from "../TypeDefs/Book";
+import Book from "../../models/Book";
 
 const books = [
   { id: 1, title: "Harry Potter and the Chamber of Secrets", authId: 1 },
@@ -15,6 +16,6 @@ const books = [
 export const GET_BOOKS = {
   type: new GraphQLList(BookType),
   resolve() {
-    return books;
+    return Book.find({});
   },
 };
