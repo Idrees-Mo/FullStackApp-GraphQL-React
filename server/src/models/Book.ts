@@ -5,10 +5,10 @@ const bookSchema = new mongoose.Schema({
     type: String,
     require: true,
   },
-  // authId: {
-  //   type: mongoose.Schema.Types.ObjectId,
-  //   require: true,
-  // },
+  authId: {
+    type: String,
+    require: true,
+  },
 });
 
 export default mongoose.model("Book", bookSchema);

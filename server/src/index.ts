@@ -6,12 +6,14 @@ import { schema } from "./schema";
 import cors from "cors";
 
 const app = express();
-const URI: any = process.env.mongoURI;
 
-mongoose.connect(URI);
+// connecting to database - MongoDB
+const URI: any = process.env.mongoURI;
+mongoose.connect(URI, { useNewUrlParser: true, useUnifiedTopology: true });
 mongoose.connection.once("open", () => {
   console.log("connected to mongoDB");
 });
+
 app.use(cors());
 app.use(
   "/graphql",
