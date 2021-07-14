@@ -13,12 +13,12 @@ export const AuthorType: any = new GraphQLObjectType({
   name: "Author",
   description: "This is the type for Author",
   fields: () => ({
-    id: { type: GraphQLNonNull(GraphQLID) },
-    name: { type: GraphQLNonNull(GraphQLString) },
+    id: { type: GraphQLID },
+    name: { type: GraphQLString },
     books: {
       type: new GraphQLList(BookType),
       resolve: (parent, args) => {
-        return Book.find({ authId: parent.id });
+        return Book.where({ authId: parent.id });
       },
     },
   }),

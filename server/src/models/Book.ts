@@ -6,6 +6,8 @@ const bookSchema = new mongoose.Schema({
     require: true,
   },
   authId: {
+    // type: mongoose.Schema.Types.ObjectId,
+    // ref: "books",
     type: String,
     require: true,
   },

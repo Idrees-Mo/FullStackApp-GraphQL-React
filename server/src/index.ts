@@ -1,5 +1,5 @@
 require("dotenv").config();
-import express from "express";
+import express, { json } from "express";
 import mongoose from "mongoose";
 import { graphqlHTTP } from "express-graphql";
 import { schema } from "./schema";
@@ -15,6 +15,8 @@ mongoose.connection.once("open", () => {
 });
 
 app.use(cors());
+app.use(express.json());
+
 app.use(
   "/graphql",
   graphqlHTTP({
