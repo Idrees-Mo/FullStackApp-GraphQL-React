@@ -1,4 +1,4 @@
-import { GraphQLID, GraphQLList, GraphQLNonNull, GraphQLString } from "graphql";
+import { GraphQLID, GraphQLNonNull, GraphQLString } from "graphql";
 import { BookType } from "../TypeDefs/Book";
 import Book from "../../models/Book";
 

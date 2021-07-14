@@ -1,9 +1,4 @@
-import {
-  GraphQLID,
-  GraphQLNonNull,
-  GraphQLObjectType,
-  GraphQLString,
-} from "graphql";
+import { GraphQLID, GraphQLObjectType, GraphQLString } from "graphql";
 import { AuthorType } from "./Author";
 import Author from "./../../models/Author";
 
