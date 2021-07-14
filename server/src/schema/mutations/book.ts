@@ -17,3 +17,26 @@ export const ADD_BOOK = {
     return book.save();
   },
 };
+
+export const DELETE_BOOK = {
+  type: BookType,
+  description: "Remove a book",
+  args: {
+    id: { type: GraphQLNonNull(GraphQLID) },
+  },
+  async resolve(parent: any, args: any) {
+    return Book.findByIdAndRemove(args.id);
+  },
+};
+
+export const UPDATE_BOOK = {
+  type: BookType,
+  description: "Update book",
+  args: {
+    id: { type: GraphQLNonNull(GraphQLID) },
+    title: { type: GraphQLNonNull(GraphQLString) },
+  },
+  async resolve(parent: any, args: any) {
+    return Book.findByIdAndUpdate(args.id, { title: args.title });
+  },
+};

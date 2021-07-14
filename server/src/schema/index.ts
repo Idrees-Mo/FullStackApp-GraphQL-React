@@ -1,6 +1,6 @@
 import { GraphQLObjectType, GraphQLSchema } from "graphql";
 import { ADD_AUTHOR } from "./mutations/author";
-import { ADD_BOOK } from "./mutations/book";
+import { ADD_BOOK, DELETE_BOOK, UPDATE_BOOK } from "./mutations/book";
 import { GET_AUTHORS, GET_AUTHOR } from "./queries/author";
 import { GET_BOOK, GET_BOOKS } from "./queries/book";
 
@@ -19,6 +19,8 @@ const Mutaion = new GraphQLObjectType({
   fields: {
     addAuthor: ADD_AUTHOR,
     addBook: ADD_BOOK,
+    deleteBook: DELETE_BOOK,
+    updateBook: UPDATE_BOOK,
   },
 });
 
