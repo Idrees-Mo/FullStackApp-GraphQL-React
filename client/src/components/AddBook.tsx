@@ -1,7 +1,7 @@
 import { useMutation, useQuery } from "@apollo/client";
 import React, { useState, useEffect } from "react";
 import { ADD_BOOK } from "../GraphQL/Mutations";
-import { GET_AUTHORS } from "../GraphQL/Queries";
+import { GET_AUTHORS, GET_BOOKS } from "../GraphQL/Queries";
 
 const AddBook = () => {
   const [title, setTitle] = useState("");
@@ -17,7 +17,10 @@ const AddBook = () => {
 
   const onsubmit = (e: any) => {
     e.preventDefault();
-    addBook({ variables: { title, authId } });
+    addBook({
+      variables: { title, authId },
+      refetchQueries: [{ query: GET_BOOKS }],
+    });
     setTitle("");
   };
 
