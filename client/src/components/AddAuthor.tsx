@@ -13,16 +13,19 @@ const AddAuthor = () => {
         name,
       },
     });
+    setName("");
   };
 
   return (
     <>
-      <h1>New Author</h1>
+      <h2> + New Author</h2>
       <form onSubmit={onsubmit}>
-        <label>Add Author:</label>
+        <label>Author Name:</label>
         <input
           type="text"
           name="name"
+          value={name}
+          placeholder="Please enter author name"
           onChange={(e) => setName(e.target.value)}
         />
         <button type="submit">Add Author</button>

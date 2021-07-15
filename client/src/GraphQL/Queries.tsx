@@ -11,3 +11,15 @@ export const GET_BOOKS = gql`
     }
   }
 `;
+export const GET_AUTHORS = gql`
+  query GetAuthors {
+    getAuthors {
+      id
+      name
+      books {
+        title
+        id
+      }
+    }
+  }
+`;

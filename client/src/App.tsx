@@ -2,6 +2,7 @@ import { ApolloClient, ApolloProvider, InMemoryCache } from "@apollo/client";
 import React from "react";
 import "./App.css";
 import AddAuthor from "./components/AddAuthor";
+import AddBook from "./components/AddBook";
 import Books from "./components/Books";
 
 const App = () => {
@@ -12,8 +13,9 @@ const App = () => {
 
   return (
     <ApolloProvider client={client}>
-      <AddAuthor />
+      <AddBook />
       <Books />
+      <AddAuthor />
     </ApolloProvider>
   );
 };
