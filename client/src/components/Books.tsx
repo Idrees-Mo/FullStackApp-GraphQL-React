@@ -13,12 +13,15 @@ const Books = () => {
         {data &&
           data.getAllBooks.map((b: any) => {
             return (
-              <div
-                key={b.id}
-                onDoubleClick={() => deletUser({ variables: { id: b.id } })}
-              >
+              <div key={b.id}>
                 <h3>Title:{b.title}</h3>
                 <p>By: {b.author.name}</p>
+                <button
+                  onClick={() => deletUser({ variables: { id: b.id } })}
+                  style={{ cursor: "pointer" }}
+                >
+                  X
+                </button>
               </div>
             );
           })}
